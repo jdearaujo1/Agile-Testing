@@ -22,7 +22,7 @@ public class FunctionalTest {
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver","/Library/Java/JUNIT/chromedriver");
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
   		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
      }
 
@@ -31,9 +31,12 @@ public class FunctionalTest {
     public void testHomepage() throws Exception {
         driver.get("https://www.meetup.com/fr-FR/");
 		assertEquals(driver.getTitle(), "Partagez vos passions | Meetup");
+		assertEquals(driver.findElement(By.description("Partagez vos passions et faites bouger votre ville ! Meetup vous aide à rencontrer des personnes près de chez vous, autour de vos centres d'intérêt"));
+        )
 		// TODO
 		// To Be Completed By Coders From Coding Factory
     }
+
 
     // Test de la Story n ...
     // TODO
