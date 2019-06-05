@@ -13,6 +13,11 @@ import static org.hamcrest.Matchers.*;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FunctionalTest {
 
@@ -32,7 +37,7 @@ public class FunctionalTest {
         driver.get("https://www.meetup.com/fr-FR/");
 		assertEquals(driver.getTitle(), "Partagez vos passions | Meetup");
 		assertEquals(driver.findElement(By.description("Partagez vos passions et faites bouger votre ville ! Meetup vous aide à rencontrer des personnes près de chez vous, autour de vos centres d'intérêt"));
-        )
+		assertEquals(driver.findElement(By.cssSelector("meta[name='description']")).getAttribute("content"), "Partagez vos passions et faites bouger votre ville ! Meetup vous aide à rencontrer des personnes près de chez vous, autour de vos centres d'intérêt.");
 		// TODO
 		// To Be Completed By Coders From Coding Factory
     }
