@@ -47,7 +47,7 @@ public class HeroTest {
         assertThat(hero, hasProperty("level"));
         heroLevelTemp = hero.getLevel();
         heroLevelUp = hero.levelUp();
-        assertThat(heroLevelUp, greaterThan(heroLevelTemp))
+        assertThat(heroLevelUp, greaterThan(heroLevelTemp));
 	}
 
 	@Test
