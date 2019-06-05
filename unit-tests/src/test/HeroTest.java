@@ -44,8 +44,10 @@ public class HeroTest {
 
 	@Test
 	public void testHeroLevelUp() throws Exception {
-		greaterThan(hero.getLevel());
-        System.out.println("test ok");
+        assertThat(hero, hasProperty("level"));
+        heroLevelTemp = hero.getLevel();
+        heroLevelUp = hero.levelUp();
+        assertThat(heroLevelUp, greaterThan(heroLevelTemp))
 	}
 
 	@Test
