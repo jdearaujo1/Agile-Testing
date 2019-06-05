@@ -19,7 +19,9 @@ javac -d ../bin/ test/GameTest.java
 echo 'GameTest compiled successfully ✓'
 
 
-printf 'Running HeroTest ... \n\n'
+echo 'Running HeroTest ...'
+printf 'Running EnemyTest ... \n\n'
+
 
 
 cd ../bin/
