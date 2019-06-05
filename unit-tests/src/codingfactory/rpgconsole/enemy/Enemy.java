@@ -40,6 +40,6 @@ public class Enemy {
     public void attack(Hero hero) {
         Random rand = new Random();
         int randomNum = rand.nextInt(this.level + 1);
-        hero.takeDamage(this.atk+randomNum); //hero take damage for enemy attack
+        hero.takeDamage(this.atk + randomNum); //hero take damage for enemy attack
     }
 }
