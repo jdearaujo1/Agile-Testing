@@ -38,6 +38,7 @@ public class FunctionalTest {
 		assertEquals(driver.getTitle(), "Partagez vos passions | Meetup");
 		//assertThat(driver.findElement(By.cssSelector("meta[name='description']")).getAttribute("content"), is ("Partagez vos passions et faites bouger votre ville ! Meetup vous aide à rencontrer des personnes près de chez vous, autour de vos centres d'intérêt."));
 		assertThat(driver.findElement(By.cssSelector("h1")).getText(), is ("Le monde vous tend les bras"));
+		assertThat(driver.findElement(By.cssSelector("div[class='flex-item button--wrapper']")).getText(), is ("Rejoindre Meetup"));
 		// TODO
 		// To Be Completed By Coders From Coding Factory
     }
