@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -15,6 +16,7 @@ import codingfactory.rpgconsole.hero.Hero;
 import codingfactory.rpgconsole.enemy.Enemy;
 
 import java.util.Random;
+
 public class HeroTest {
 
 	Hero hero;
@@ -74,3 +76,12 @@ public class HeroTest {
 	public void testSetLevel() throws Exception {
 		assertThat(hero.getLevel(), greaterThan(0));
 	}
+
+	@Test
+	public void testTakeDamage() throws Exception {
+		int heroHpTemp = hero.getHp();
+		hero.takeDamage(2);
+		int heroTakeDamage = hero.getHp();
+		assertThat(heroTakeDamage, lessThanOrEqualTo(heroHpTemp));
+	}
+}
