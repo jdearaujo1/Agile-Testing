@@ -16,7 +16,9 @@ javac -d ../bin/ test/EnemyTest.java
 echo 'EnemyTest compiled successfully ✓'
 
 
-printf 'Running HeroTest ... \n\n'
+echo 'Running HeroTest ...'
+printf 'Running EnemyTest ... \n\n'
+
 
 
 cd ../bin/
