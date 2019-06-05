@@ -15,6 +15,9 @@ echo 'HeroTest compiled successfully ✓'
 javac -d ../bin/ test/EnemyTest.java
 echo 'EnemyTest compiled successfully ✓'
 
+javac -d ../bin/ test/GameTest.java
+echo 'GameTest compiled successfully ✓'
+
 
 printf 'Running HeroTest ... \n\n'
 
@@ -22,4 +25,5 @@ printf 'Running HeroTest ... \n\n'
 cd ../bin/
 java org.junit.runner.JUnitCore test.HeroTest
 java org.junit.runner.JUnitCore test.EnemyTest
+java org.junit.runner.JUnitCore test.GameTest
 
