@@ -29,7 +29,7 @@ public class HomepageSteps {
 	public void beforeScenario() {
 		System.setProperty("webdriver.chrome.driver","/Library/Java/JUNIT/chromedriver");
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
@@ -49,6 +49,13 @@ public class HomepageSteps {
 		assertTrue(driver.findElement(By.cssSelector("meta[name='description']")).getAttribute("content").contains(arg1));
 		// By XPATH, si vous préférez...
 	    // assertEquals(driver.findElement(By.xpath("//meta[@name='description']")).getAttribute("content"), arg1);
+	}
+
+
+	@Given("^le bloc des meetups près de chez soi est présent$")
+	public void le_bloc_des_meetups_près_de_chez_soi_est_présent() throws Throwable {
+		assertTrue(driver.findElement(By.cssSelector("h2[class='text--sectionTitle']")).getText().contains("Événements à proximité"));
+		//throw new PendingException();
 	}
 
 	@After
