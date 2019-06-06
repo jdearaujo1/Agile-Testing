@@ -58,6 +58,11 @@ public class HomepageSteps {
 		//throw new PendingException();
 	}
 
+    @Then("^le h doit être \"([^\"]*)\"$")
+    public void le_h_doit_être(String arg1) throws Throwable {
+        assertThat(driver.findElement(By.cssSelector("h1")).getText(), is ("Le monde vous tend les bras"));
+        //throw new PendingException();
+    }
 	@After
 	public void afterScenario() {
 		driver.quit();
