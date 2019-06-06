@@ -51,11 +51,18 @@ public class HomepageSteps {
 	    // assertEquals(driver.findElement(By.xpath("//meta[@name='description']")).getAttribute("content"), arg1);
 	}
 
-    @Then("^le h doit être \"([^\"]*)\"$")
-    public void le_h_doit_être(String arg1) throws Throwable {
-		assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Le monde vous tend les bras"));
+
+	@Given("^le bloc des meetups près de chez soi est présent$")
+	public void le_bloc_des_meetups_près_de_chez_soi_est_présent() throws Throwable {
+		assertTrue(driver.findElement(By.cssSelector("h2[class='text--sectionTitle']")).getText().contains("Événements à proximité"));
 		//throw new PendingException();
 	}
+
+    @Then("^le h doit être \"([^\"]*)\"$")
+    public void le_h_doit_être(String arg1) throws Throwable {
+        assertThat(driver.findElement(By.cssSelector("h1")).getText(), is ("Le monde vous tend les bras"));
+        //throw new PendingException();
+    }
 	@Given("^le bloc des meetups près de chez soi est présent$")
 	public void le_bloc_des_meetups_près_de_chez_soi_est_présent() throws Throwable {
 		assertTrue(driver.findElement(By.cssSelector("h2[class='text--sectionTitle']")).getText().contains("Événements à proximité"));
