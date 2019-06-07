@@ -29,7 +29,7 @@ public class HomepageSteps {
 	public void beforeScenario() {
 		System.setProperty("webdriver.chrome.driver","/Library/Java/JUNIT/chromedriver");
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
@@ -51,10 +51,50 @@ public class HomepageSteps {
 	    // assertEquals(driver.findElement(By.xpath("//meta[@name='description']")).getAttribute("content"), arg1);
 	}
 
+
+	@Given("^le bloc des meetups près de chez soi est présent$")
+	public void le_bloc_des_meetups_près_de_chez_soi_est_présent() throws Throwable {
+		assertTrue(driver.findElement(By.cssSelector("h2[class='text--sectionTitle']")).getText().contains("Événements à proximité"));
+		//throw new PendingException();
+	}
+
     @Then("^le h doit être \"([^\"]*)\"$")
     public void le_h_doit_être(String arg1) throws Throwable {
         assertThat(driver.findElement(By.cssSelector("h1")).getText(), is ("Le monde vous tend les bras"));
         //throw new PendingException();
+    }
+	@Given("^le bloc des meetups près de chez soi est présent$")
+	public void le_bloc_des_meetups_près_de_chez_soi_est_présent() throws Throwable {
+		assertTrue(driver.findElement(By.cssSelector("h2[class='text--sectionTitle']")).getText().contains("Événements à proximité"));
+		//throw new PendingException();
+	}
+
+	@When("^je clic sur le bouton \"([^\"]*)\"$")
+	public void je_clic_sur_le_bouton(String arg1) throws Throwable {
+		//assertEquals(driver.click(By.xpath("//a[@class='button button--bordered exploreHome-section-showMore']"), "Voir tout"));
+		//driver.click(By.xpath('//a[@class="button button--bordered exploreHome-section-showMore"]'));
+		throw new PendingException();
+	}
+
+	@Then("^je suis sur la page \"([^\"]*)\"$")
+	public void je_suis_sur_la_page(String arg1) throws Throwable {
+		assertEquals(driver.getCurrentUrl(), "https://www.meetup.com/fr-FR/find/");
+		assertEquals(driver.getCurrentUrl(), "https://secure.meetup.com/register");
+		//throw new PendingException();
+	}
+
+	@Then("^la recherche est initialisé sur un rayon de \"([^\"]*)\" autour de \"([^\"]*)\", FR$")
+	public void la_recherche_est_initialisé_sur_un_rayon_de_autour_de_FR(String arg1, String arg2) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		throw new PendingException();
+	}
+
+	@Given("^le bouton inscription contient \"([^\"]*)\"$")
+	public void le_bouton_inscription_contient(String arg1) throws Throwable {
+		assertThat(driver.findElement(By.cssSelector("div[class='flex-item button--wrapper']")).getText(), is ("Rejoindre Meetup"));
+		//throw new PendingException();
+	}
+
 	@After
 	public void afterScenario() {
 		driver.quit();
