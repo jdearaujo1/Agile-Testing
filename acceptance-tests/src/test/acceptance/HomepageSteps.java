@@ -55,6 +55,12 @@ public class HomepageSteps {
     public void le_h_doit_être(String arg1) throws Throwable {
         assertThat(driver.findElement(By.cssSelector("h1")).getText(), is ("Le monde vous tend les bras"));
         //throw new PendingException();
+	@Then("^le p doit être \"([^\"]*)\"$")
+	public void le_p_doit_être(String arg1) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		assertThat(driver.findElement(By.cssSelector(".exploreHome-hero-subTitle")).getText(), is("Rejoignez un groupe local pour rencontrer du monde, tester une nouvelle activité ou partager vos passions."));
+		//throw new PendingException();
+	}
 	@After
 	public void afterScenario() {
 		driver.quit();
